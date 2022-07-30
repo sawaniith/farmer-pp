@@ -117,7 +117,13 @@ function Signup() {
       window.alert("Registration Successful");
       console.log("registeration successful");
       navigate("/");
-    } else {
+    }
+    else if (status === 420) {
+      window.alert("Error: Co-ordinator Name Already Exist");
+      console.log("user already exist");
+      navigate("/");
+    }
+    else {
         window.alert("Invalid Registration");
         console.log("Invalid Registration");
     }
