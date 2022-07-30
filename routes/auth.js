@@ -7,9 +7,6 @@ const Farmer = require('../model/farmerSchema');
 const Partner = require('../model/partnerSchema');
 const authenticate = require('../middleware/authenticate');
 
-router.get("/", (req, res) => {
-  res.send("Hello! API is running from router..");
-});
 
 //create part USING ASYNC AWAIT
 router.post("/create", authenticate, async (req, res) => {
