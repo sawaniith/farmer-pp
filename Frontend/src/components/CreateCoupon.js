@@ -12,7 +12,7 @@ const CreateCoupon = () => {
     const navigate = useNavigate();
 
     const [checked, setChecked] = useState([]);
-    const checkList = ["Paddy", "Wheat", "Maise", "Moong", "Urad"];
+    const checkList = ["Paddy", "Wheat", "Maize", "Moong", "Urad"];
     const [others, setOthers] = useState("");
 
     // Add/Remove checked item from list
@@ -534,7 +534,7 @@ const CreateCoupon = () => {
                             <label for="exampleInputEmail1">Panchayat:</label>
                             <select class="form-select" name="panchayat" id="panch" aria-label="Default select example" value={farmer.panchayat} onChange={(e) => setFarmer({ ...farmer, panchayat: e.target.value })}>
                                 <option value="">Open this select menu</option>
-                                <option name="panchayat" value="BABHANGAM">BABHANGAM</option>
+                                <option name="panchayat" value="BABHANGAMA">BABHANGAMA</option>
                                 <option name="panchayat" value="LATTIPUR NORTH">LATTIPUR NORTH</option>
                                 <option name="panchayat" value="LATTIPUR SOUTH">LATTIPUR SOUTH</option>
                             </select>
@@ -555,6 +555,7 @@ const CreateCoupon = () => {
                             />
                             {/* <div className="text-danger">{couponErr.coupon_code}</div> */}
                         </div>
+
                         <div class="form-group">
                             <label for="exampleInputPassword1">District:</label>
                             <input
@@ -570,21 +571,8 @@ const CreateCoupon = () => {
                             />
                             {/* <div className="text-danger">{couponErr.min_price}</div> */}
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Farmer Name:</label>
-                            <input
-                                id="farm"
-                                type="text"
-                                name="farmer_name"
-                                class="form-control"
-                                //id="exampleInputPassword1"
-                                value={farmer.farmer_name}
-                                onChange={handleInputs}
-                                placeholder="Farmer Name"
-                            />
-                            {/* <div className="text-danger">{couponErr.max_times_use}</div> */}
-                        </div>
 
+                        
                         <div class="form-group">
                             <label for="exampleInputPassword1">Farmer Registration No. :</label>
                             <input
@@ -596,6 +584,21 @@ const CreateCoupon = () => {
                                 value={farmer.farmer_register}
                                 onChange={handleInputs}
                                 placeholder="Farmer Registtration No"
+                            />
+                            {/* <div className="text-danger">{couponErr.max_times_use}</div> */}
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Farmer Name:</label>
+                            <input
+                                id="farm"
+                                type="text"
+                                name="farmer_name"
+                                class="form-control"
+                                //id="exampleInputPassword1"
+                                value={farmer.farmer_name}
+                                onChange={handleInputs}
+                                placeholder="Farmer Name"
                             />
                             {/* <div className="text-danger">{couponErr.max_times_use}</div> */}
                         </div>
@@ -735,21 +738,6 @@ const CreateCoupon = () => {
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Agricultural Implements:</label>
-                            <input
-                                id="agr_imp"
-                                type="text"
-                                name="agri_implem"
-                                class="form-control"
-                                //id="exampleInputPassword1"
-                                value={farmer.agri_implem}
-                                onChange={handleInputs}
-                                placeholder="Agricultural Implements"
-                            />
-                            {/* <div className="text-danger">{couponErr.max_discount}</div> */}
-                        </div>
-
-                        <div class="form-group">
                             <label for="exampleInputPassword1">Crops:</label>
                             <div className="form-control">
 
@@ -784,7 +772,22 @@ const CreateCoupon = () => {
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Diesel Pump:</label>
+                            <label for="exampleInputPassword1">Agricultural Implements:</label>
+                            <input
+                                id="agr_imp"
+                                type="text"
+                                name="agri_implem"
+                                class="form-control"
+                                //id="exampleInputPassword1"
+                                value={farmer.agri_implem}
+                                onChange={handleInputs}
+                                placeholder="Agricultural Implements"
+                            />
+                            {/* <div className="text-danger">{couponErr.max_discount}</div> */}
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Diesel Pumpset:</label>
                             <div className="form-control">
                                 <div>
                                     <input type="radio" id="dis" name="dis_pmp" value="Yes" onChange={(e) => setFarmer({ ...farmer, dis_pmp: e.target.value })} />
@@ -800,10 +803,10 @@ const CreateCoupon = () => {
 
                         {(farmer.dis_pmp === 'Yes') ?
                             <div class="form-group">
-                                <label for="exampleInputPassword1">No of Diesel Pump:</label>
+                                <label for="exampleInputPassword1">No of Diesel Pumpset:</label>
                                 <input
                                     id="nodispmp"
-                                    type="number"
+                                    type="text"
                                     name="no_dis_pmp"
                                     class="form-control"
                                     //id="exampleInputPassword1"
@@ -817,7 +820,7 @@ const CreateCoupon = () => {
                         }
 
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Electric Pump:</label>
+                            <label for="exampleInputPassword1">Electric Pumpset:</label>
                             <div className="form-control">
                                 <div>
                                     <input type="radio" id="elec" name="elec_pmp" value="Yes" onChange={(e) => setFarmer({ ...farmer, elec_pmp: e.target.value })} />
@@ -833,10 +836,10 @@ const CreateCoupon = () => {
 
                         {(farmer.elec_pmp === 'Yes') ?
                             <div class="form-group">
-                                <label for="exampleInputPassword1">No of Electric Pump:</label>
+                                <label for="exampleInputPassword1">No of Electric Pumpset:</label>
                                 <input
                                     id="noelecpmp"
-                                    type="number"
+                                    type="text"
                                     name="no_elec_pmp"
                                     class="form-control"
                                     //id="exampleInputPassword1"

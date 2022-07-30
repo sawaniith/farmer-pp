@@ -127,7 +127,7 @@ const Filters = () => {
                 <label for="exampleInputEmail1"><strong>Panchayat:</strong></label>
                 <select class="form-select" name="panchayt" id="panch" aria-label="Default select example" value={panchayt} onChange={(e) => setPanchayt(e.target.value)}>
                     <option name="panchayt" value="ALL PANCH">ALL PANCHAYAT</option>
-                    <option name="panchayt" value="BABHANGAM">BABHANGAM</option>
+                    <option name="panchayt" value="BABHANGAMA">BABHANGAMA</option>
                     <option name="panchayt" value="LATTIPUR NORTH">LATTIPUR NORTH</option>
                     <option name="panchayt" value="LATTIPUR SOUTH">LATTIPUR SOUTH</option>
                 </select>
@@ -136,57 +136,56 @@ const Filters = () => {
             <table id="table-to-xls" className=" example table table-striped table-bordered" style={{ "display": "block", "overflow-x": "auto", "white-space": "nowrap" }}>
                 <thead>
                     <tr>
-                        <th>Sr No.</th>
-                        <th>Farmer Name</th>
+                        <th>Sl No.</th>
                         <th>Farmer Registration No</th>
+                        <th>Farmer Name</th>
+                        <th>Father/Husband Name</th>
                         <th>Mobile</th>
                         <th>Aadhar</th>
+                        <th>Revenue Village</th>
                         <th>Panchayat</th>
                         <th>Block</th>
                         <th>District</th>
-                        <th>Father/Husband Name</th>
                         <th>Wife/Husband Aadhar</th>
-                        <th>Revenue Village</th>
                         <th>Own Agriculture Land</th>
                         <th>Khata</th>
                         <th>Khesra</th>
                         <th>Rakwa</th>
-                        <th>Agricultural Implements</th>
                         <th>Crops</th>
-                        <th>Diesel Pump</th>
-                        <th>No of Diesel Pump</th>
-                        <th>Electric Pump</th>
-                        <th>No of Electric Pump</th>
+                        <th>Diesel Pumpset</th>
+                        <th>No of Diesel Pumpset</th>
+                        <th>Electric Pumpset</th>
+                        <th>No of Electric Pumpset</th>
+                        <th>Agricultural Implements</th>
                         <th>Kisan Credit Card</th>
                         <th>Beneficiery of PM Kisan</th>
                         <th>Payment Installment</th>
-
                     </tr>
                 </thead>
                 <tbody>
                     {farmers && farmers.map(farmer =>
                         <tr key={farmer._id}>
                             <td> {sr++}</td>
-                            <td>{farmer.farmer_name}</td>
                             <td>{farmer.farmer_register}</td>
+                            <td>{farmer.farmer_name}</td>
+                            <td>{farmer.father_husband_name}</td>
                             <td>{farmer.mobile}</td>
                             <td>{farmer.aadhar}</td>
+                            <td> {farmer.reven_vill}</td>
                             <td>{farmer.panchayat}</td>
                             <td>{farmer.block}</td>
                             <td>{farmer.dist}</td>
-                            <td>{farmer.father_husband_name}</td>
                             <td>{farmer.wife_husband_aadhar}</td>
-                            <td> {farmer.reven_vill}</td>
                             <td>{farmer.own_agri_land}</td>
                             <td>{farmer.khata}</td>
                             <td>{farmer.khesra}</td>
                             <td>{farmer.rakwa}</td>
-                            <td>{farmer.agri_implem}</td>
                             <td>{string(farmer.crops)}</td>
                             <td>{farmer.dis_pmp}</td>
                             <td>{farmer.no_dis_pmp}</td>
                             <td>{farmer.elec_pmp}</td>
                             <td>{farmer.no_elec_pmp}</td>
+                            <td>{farmer.agri_implem}</td>
                             <td>{farmer.kcc}</td>
                             <td>{farmer.benef_pm_kisan}</td>
                             <td>{farmer.payment_install}</td>

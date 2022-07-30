@@ -62,66 +62,21 @@ const ComponentToPrint = forwardRef((props, ref) => {
                         {/* <div className="text-danger">{couponErr.partner_id}</div> */}
                     </div>
 
+                    
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Farmer Id:</label>
+                        <label for="exampleInputPassword1">Farmer Registration No. :</label>
                         <input
-                            // id="part"
+                            id="farm_reg"
                             type="text"
+                            name="farmer_register"
                             class="form-control"
-                            name="partner"
                             //id="exampleInputPassword1"
-                            value={_id}
-                            // onChange={handleInputs}
-                            // placeholder="Partner Name"
-                            disabled={true}
-                        />
-                        {/* <div className="text-danger">{couponErr.partner_id}</div> */}
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Panchayat:</label>
-                        <input
-                            id="panch"
-                            type="text"
-                            name="panchayat"
-                            class="form-control"
-                            //id="exampleInputEmail1"
-                            //aria-describedby="emailHelp"
-                            value={panchayat}
+                            value={farmer_register}
                             disabled={true}
                         // onChange={handleInputs}
-                        // placeholder="Panchayat"
+                        // placeholder="Farmer Registtration No"
                         />
-                        {/* <div className="text-danger">{couponErr.product_id}</div> */}
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Block:</label>
-                        <input
-                            id="block"
-                            type="text"
-                            name="block"
-                            class="form-control"
-                            //id="exampleInputPassword1"
-                            value={block}
-                            // onChange={handleInputs}
-                            // placeholder="Block"
-                            disabled={true}
-                        />
-                        {/* <div className="text-danger">{couponErr.coupon_code}</div> */}
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">District:</label>
-                        <input
-                            id="dist"
-                            type="text"
-                            name="dist"
-                            class="form-control"
-                            //id="exampleInputPassword1"
-                            value={dist}
-                            // onChange={handleInputs}
-                            // placeholder="District"
-                            disabled={true}
-                        />
-                        {/* <div className="text-danger">{couponErr.min_price}</div> */}
+                        {/* <div className="text-danger">{couponErr.max_times_use}</div> */}
                     </div>
 
                     <div class="form-group">
@@ -140,22 +95,7 @@ const ComponentToPrint = forwardRef((props, ref) => {
                         {/* <div className="text-danger">{couponErr.max_times_use}</div> */}
                     </div>
 
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Farmer Registration No. :</label>
-                        <input
-                            id="farm_reg"
-                            type="text"
-                            name="farmer_register"
-                            class="form-control"
-                            //id="exampleInputPassword1"
-                            value={farmer_register}
-                            disabled={true}
-                        // onChange={handleInputs}
-                        // placeholder="Farmer Registtration No"
-                        />
-                        {/* <div className="text-danger">{couponErr.max_times_use}</div> */}
-                    </div>
-
+                    
                     <div class="form-group">
                         <label for="exampleInputPassword1">Father/Husband Name:</label>
                         <input
@@ -172,6 +112,7 @@ const ComponentToPrint = forwardRef((props, ref) => {
                         {/* <div className="text-danger">{couponErr.validity}</div> */}
                     </div>
 
+                    
                     <div class="form-group">
                         <label for="exampleInputPassword1">Mobile No:</label>
                         <input
@@ -203,22 +144,8 @@ const ComponentToPrint = forwardRef((props, ref) => {
                         />
                         {/* <div className="text-danger">{couponErr.max_discount}</div> */}
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Wife/Husband Aadhar:</label>
-                        <input
-                            id="wifhusaadh"
-                            type="text"
-                            name="wife_husband_aadhar"
-                            class="form-control"
-                            //id="exampleInputPassword1"
-                            value={wife_husband_aadhar}
-                            disabled={true}
-                        // onChange={handleInputs}
-                        // placeholder="Wife or Husband Aadhar No"
-                        />
-                        {/* <div className="text-danger">{couponErr.max_times_use}</div> */}
-                    </div>
 
+                    
                     <div class="form-group">
                         <label for="exampleInputPassword1">Revenue Village:</label>
                         <input
@@ -233,6 +160,70 @@ const ComponentToPrint = forwardRef((props, ref) => {
                         // placeholder="Revenue Village"
                         />
                         {/* <div className="text-danger">{couponErr.validity}</div> */}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Panchayat:</label>
+                        <input
+                            id="panch"
+                            type="text"
+                            name="panchayat"
+                            class="form-control"
+                            //id="exampleInputEmail1"
+                            //aria-describedby="emailHelp"
+                            value={panchayat}
+                            disabled={true}
+                        // onChange={handleInputs}
+                        // placeholder="Panchayat"
+                        />
+                        {/* <div className="text-danger">{couponErr.product_id}</div> */}
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Block:</label>
+                        <input
+                            id="block"
+                            type="text"
+                            name="block"
+                            class="form-control"
+                            //id="exampleInputPassword1"
+                            value={block}
+                            // onChange={handleInputs}
+                            // placeholder="Block"
+                            disabled={true}
+                        />
+                        {/* <div className="text-danger">{couponErr.coupon_code}</div> */}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">District:</label>
+                        <input
+                            id="dist"
+                            type="text"
+                            name="dist"
+                            class="form-control"
+                            //id="exampleInputPassword1"
+                            value={dist}
+                            // onChange={handleInputs}
+                            // placeholder="District"
+                            disabled={true}
+                        />
+                        {/* <div className="text-danger">{couponErr.min_price}</div> */}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Wife/Husband Aadhar:</label>
+                        <input
+                            id="wifhusaadh"
+                            type="text"
+                            name="wife_husband_aadhar"
+                            class="form-control"
+                            //id="exampleInputPassword1"
+                            value={wife_husband_aadhar}
+                            disabled={true}
+                        // onChange={handleInputs}
+                        // placeholder="Wife or Husband Aadhar No"
+                        />
+                        {/* <div className="text-danger">{couponErr.max_times_use}</div> */}
                     </div>
 
                     <div class="form-group">
@@ -299,22 +290,7 @@ const ComponentToPrint = forwardRef((props, ref) => {
                         {/* <div className="text-danger">{couponErr.max_discount}</div> */}
                     </div>
 
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Agricultural Implements:</label>
-                        <input
-                            id="agr_imp"
-                            type="text"
-                            name="agr_implem"
-                            class="form-control"
-                            //id="exampleInputPassword1"
-                            value={agri_implem}
-                            disabled={true}
-                        // onChange={handleInputs}
-                        // placeholder="Agricultural Implements"
-                        />
-                        {/* <div className="text-danger">{couponErr.max_discount}</div> */}
-                    </div>
-
+                    
                     <div class="form-group">
                         <label for="exampleInputPassword1">Crops:</label>
                         <input
@@ -332,7 +308,7 @@ const ComponentToPrint = forwardRef((props, ref) => {
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Diesel Pump:</label>
+                        <label for="exampleInputPassword1">Diesel Pumpset:</label>
                         <input
                             id="crop"
                             type="text"
@@ -348,7 +324,7 @@ const ComponentToPrint = forwardRef((props, ref) => {
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleInputPassword1">No of Diesel Pump:</label>
+                        <label for="exampleInputPassword1">No of Diesel Pumpset:</label>
                         <input
                             id="crop"
                             type="text"
@@ -363,8 +339,9 @@ const ComponentToPrint = forwardRef((props, ref) => {
                         {/* <div className="text-danger">{couponErr.max_times_use}</div> */}
                     </div>
 
+                    
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Electric Pump:</label>
+                        <label for="exampleInputPassword1">Electric Pumpset:</label>
                         <input
                             id="crop"
                             type="text"
@@ -379,8 +356,9 @@ const ComponentToPrint = forwardRef((props, ref) => {
                         {/* <div className="text-danger">{couponErr.max_times_use}</div> */}
                     </div>
 
+                    
                     <div class="form-group">
-                        <label for="exampleInputPassword1">No of Electric Pump:</label>
+                        <label for="exampleInputPassword1">No of Electric Pumpset:</label>
                         <input
                             id="crop"
                             type="text"
@@ -393,6 +371,22 @@ const ComponentToPrint = forwardRef((props, ref) => {
                         // placeholder="Crops"
                         />
                         {/* <div className="text-danger">{couponErr.max_times_use}</div> */}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Agricultural Implements:</label>
+                        <input
+                            id="agr_imp"
+                            type="text"
+                            name="agr_implem"
+                            class="form-control"
+                            //id="exampleInputPassword1"
+                            value={agri_implem}
+                            disabled={true}
+                        // onChange={handleInputs}
+                        // placeholder="Agricultural Implements"
+                        />
+                        {/* <div className="text-danger">{couponErr.max_discount}</div> */}
                     </div>
 
                     <div class="form-group">

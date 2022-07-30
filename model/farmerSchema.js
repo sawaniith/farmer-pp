@@ -76,7 +76,7 @@ const farmerSchema = new mongoose.Schema({
         required: true
     },
     no_dis_pmp: {
-        type: Number,
+        type: String,
         // required: true
     },
     elec_pmp: {
@@ -84,7 +84,7 @@ const farmerSchema = new mongoose.Schema({
         required: true
     },
     no_elec_pmp: {
-        type: Number,
+        type: String,
         // required: true
     },
     kcc: {
