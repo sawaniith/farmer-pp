@@ -18,8 +18,14 @@ app.use(require('./routes/auth'));
 const PORT = process.env.PORT || 5000;
 
 //for heroku deploy
-if(process.env.NODE_ENV === "production"){
+if (process.env.NODE_ENV === "production") {
     app.use(express.static("Frontend/build"));
+
+    // Express serve up index.html file if it doesn't recognize route
+    const path = require('path');
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'Frontend', 'build', 'index.html'));
+    });
 }
 
 app.listen(PORT, () => {
