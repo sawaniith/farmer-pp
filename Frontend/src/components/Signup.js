@@ -121,7 +121,6 @@ function Signup() {
     else if (status === 420) {
       window.alert("Error: Co-ordinator Name Already Exist");
       console.log("user already exist");
-      navigate("/");
     }
     else {
         window.alert("Invalid Registration");
