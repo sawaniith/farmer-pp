@@ -115,11 +115,11 @@ const Filters = () => {
 
             <div className="text-right">
                 <ReactHTMLTableToExcel
-                    id="test-table-xlsx-button"
-                    className="download-table-xlsx-button btn btn-success m-3"
-                    table="table-to-xlsx"
-                    filename="farmerxlsx"
-                    sheet="tablexlsx"
+                    id="test-table-xls-button"
+                    className="download-table-xls-button btn btn-success m-3"
+                    table="table-to-xls"
+                    filename="farmerxls"
+                    sheet="tablexls"
                     buttonText="Export to Excel" />
             </div>
 
@@ -133,7 +133,7 @@ const Filters = () => {
                 </select>
             </div>
 
-            <table id="table-to-xlsx" className=" example table table-striped table-bordered" style={{ "display": "block", "overflow-x": "auto", "white-space": "nowrap" }}>
+            <table id="table-to-xls" className=" example table table-striped table-bordered" style={{ "display": "block", "overflow-x": "auto", "white-space": "nowrap" }}>
                 <thead>
                     <tr>
                         <th>Sl No.</th>
