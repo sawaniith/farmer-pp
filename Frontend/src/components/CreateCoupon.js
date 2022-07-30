@@ -511,7 +511,7 @@ const CreateCoupon = () => {
         <div>
             <h1 className="text-center mt-4">Add New Farmer</h1>
 
-            <div className="container">
+            <div className="container create">
                 <form method="POST" className="card">
                     <div style={{ padding: "20px 20px 0px 20px" }}>
                         <div class="form-group" style={{ "padding-top": "20px" }}>
@@ -923,9 +923,7 @@ const CreateCoupon = () => {
                     padding: 10px
                     display: flex;
                     flex-direction: column;
-                    align-items: stretch;
-                    width: 50%   
-                                    
+                    align-items: stretch;            
                 }
                 .card {
                     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);

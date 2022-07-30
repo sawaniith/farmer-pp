@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import { PartnerContext } from '../App';
-
+import '../styles/globals.css'
 
 const Forgot = () => {
 
@@ -156,9 +156,7 @@ const Forgot = () => {
                     padding: 10px
                     display: flex;
                     flex-direction: column;
-                    align-items: stretch;
-                    width: 40%   
-                                    
+                    align-items: stretch;          
                 }
                 .card {
                     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);

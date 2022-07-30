@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { PartnerContext } from '../App';
+import '../styles/globals.css'
 
 const Home = () => {
 
@@ -172,7 +173,7 @@ const Home = () => {
 
   return (
 
-    <div className="container">
+    <div className="container home">
 
       <h3 className="p-3 text-center">Your Farmers</h3>
 

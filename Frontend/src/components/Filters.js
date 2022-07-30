@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { PartnerContext } from '../App';
+import '../styles/globals.css'
 import ReactHTMLTableToExcel from 'react-html-table-to-excel';
 
 const Filters = () => {
@@ -109,7 +110,7 @@ const Filters = () => {
 
     return (
 
-        <div className="container">
+        <div className="container home">
 
             <h3 className="p-3 text-center">Export to Excel</h3>
 

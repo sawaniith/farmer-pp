@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { PartnerContext } from '../App';
+import '../styles/globals.css'
 
 import { forwardRef, useRef } from "react";
 import ReactToPrint, { PrintContextConsumer } from "react-to-print";
@@ -43,7 +44,7 @@ const ComponentToPrint = forwardRef((props, ref) => {
 
         <h3 className="text-center">Farmer Full Details</h3>
 
-        <div className="container">
+        <div className="container create">
             <form className="card">
                 <div style={{ padding: "20px 20px 0px 20px" }}>
                     <div class="form-group" style={{ "padding-top": "20px" }}>
@@ -451,9 +452,7 @@ const ComponentToPrint = forwardRef((props, ref) => {
             padding: 10px
             display: flex;
             flex-direction: column;
-            align-items: stretch;
-            width: 50%   
-                            
+            align-items: stretch;     
          }
          .card {
             box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);

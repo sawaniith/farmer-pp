@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import '../styles/globals.css'
 
 function Signup() {
   const navigate = useNavigate();
@@ -235,9 +236,7 @@ function Signup() {
             padding: 10px
             display: flex;
             flex-direction: column;
-            align-items: stretch;
-            width: 45%   
-                            
+            align-items: stretch;       
         }
         .card {
             box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
