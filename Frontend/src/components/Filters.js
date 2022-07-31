@@ -3,7 +3,9 @@ import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { PartnerContext } from '../App';
 import '../styles/globals.css'
-import ReactHTMLTableToExcel from 'react-html-table-to-excel';
+// import ReactHTMLTableToExcel from 'react-html-table-to-excel';
+import XLSX from 'xlsx';
+
 
 const Filters = () => {
 
@@ -108,20 +110,37 @@ const Filters = () => {
 
     let sr = 1;
 
+    const expor =()=>{
+        // let ws = XLSX.utils.book_new();
+        let el = document.getElementById("table-to-xlsx");
+        let wb = XLSX.utils.table_to_book(el,{sheet: "sheet1"});
+        // XLSX.utils.book_append_sheet(wb,ws,"MySheeet1");
+        XLSX.writeFile(wb, "MyExcel.xlsx");
+    }
+
     return (
 
         <div className="container home">
 
-            <h3 className="p-3 text-center">Export to Excel</h3>
+            <h3 className="p-3 text-center">Filter and Export</h3>
 
             <div className="text-right">
-                <ReactHTMLTableToExcel
+
+                {/* <ReactHTMLTableToExcel
                     id="test-table-xls-button"
                     className="download-table-xls-button btn btn-success m-3"
                     table="table-to-xls"
                     filename="farmerxls"
                     sheet="tablexls"
-                    buttonText="Export to Excel" />
+                    buttonText="Export to Excel" /> */}
+
+                <button
+                    type="submit"
+                    onClick={expor}
+                    class="btn btn-success  m-3">
+                    Export to Excel
+                </button>
+
             </div>
 
             <div class="form-group">
@@ -138,7 +157,7 @@ const Filters = () => {
                 </select>
             </div>
 
-            <table id="table-to-xls" className=" example table table-striped table-bordered" style={{ "display": "block", "overflow-x": "auto", "white-space": "nowrap" }}>
+            <table id="table-to-xlsx" className=" example table table-striped table-bordered" style={{ "display": "block", "overflow-x": "auto", "white-space": "nowrap" }}>
                 <thead>
                     <tr>
                         <th>Sl No.</th>
