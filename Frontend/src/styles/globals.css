@@ -65,9 +65,6 @@ a {
   .create {
     width: 100%
   }
-  .radio-box{
-    width: 55%
-  }
   .radio{
     display: flex;
     flex-direction: row;
