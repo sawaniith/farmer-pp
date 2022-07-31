@@ -720,21 +720,21 @@ const EditCoupon = () => {
 
                             {(farmer.own_agri_land === 'Yes') ?
                                 <div className="form-control radio-box1">
-                                    <div>
+                                    <div className="radio">
                                         <input type="radio" id="ownagr" name="own_agri_land" value="Yes" checked onChange={(e) => setFarmer({ ...farmer, own_agri_land: e.target.value })} />
                                         <label for="yes">Yes</label>
                                     </div>
-                                    <div>
+                                    <div className="radio">
                                         <input type="radio" id="ownagr" name="own_agri_land" value="No" onChange={(e) => setFarmer({ ...farmer, own_agri_land: e.target.value })} />
                                         <label for="no">No</label>
                                     </div>
                                 </div> :
                                 <div className="form-control">
-                                    <div>
+                                    <div className="radio">
                                         <input type="radio" id="ownagr" name="own_agri_land" value="Yes" onChange={(e) => setFarmer({ ...farmer, own_agri_land: e.target.value })} />
                                         <label for="yes">Yes</label>
                                     </div>
-                                    <div>
+                                    <div className="radio">
                                         <input type="radio" id="ownagr" name="own_agri_land" value="No" checked onChange={(e) => setFarmer({ ...farmer, own_agri_land: e.target.value })} />
                                         <label for="no">No</label>
                                     </div>
@@ -852,21 +852,21 @@ const EditCoupon = () => {
                             <label for="exampleInputPassword1">Diesel Pumpset:</label>
                             {(farmer.dis_pmp === 'Yes') ?
                                 <div className="form-control">
-                                    <div>
+                                    <div className="radio">
                                         <input type="radio" id="dis" name="dis_pmp" value="Yes" checked onChange={(e) => setFarmer({ ...farmer, dis_pmp: e.target.value })} />
                                         <label for="yes">Yes</label>
                                     </div>
-                                    <div>
+                                    <div className="radio">
                                         <input type="radio" id="dis" name="dis_pmp" value="No" onChange={(e) => setFarmer({ ...farmer, dis_pmp: e.target.value })} />
                                         <label for="no">No</label>
                                     </div>
                                 </div> :
                                 <div className="form-control">
-                                    <div>
+                                    <div className="radio">
                                         <input type="radio" id="dis" name="dis_pmp" value="Yes" onChange={(e) => setFarmer({ ...farmer, dis_pmp: e.target.value })} />
                                         <label for="yes">Yes</label>
                                     </div>
-                                    <div>
+                                    <div className="radio">
                                         <input type="radio" id="dis" name="dis_pmp" value="No" checked onChange={(e) => setFarmer({ ...farmer, dis_pmp: e.target.value })} />
                                         <label for="no">No</label>
                                     </div>
@@ -897,21 +897,21 @@ const EditCoupon = () => {
                             <label for="exampleInputPassword1">Electric Pumpset:</label>
                             {(farmer.elec_pmp === 'Yes') ?
                                 <div className="form-control">
-                                    <div>
+                                    <div className="radio">
                                         <input type="radio" id="elec" name="elec_pmp" value="Yes" checked onChange={(e) => setFarmer({ ...farmer, elec_pmp: e.target.value })} />
                                         <label for="yes">Yes</label>
                                     </div>
-                                    <div>
+                                    <div className="radio">
                                         <input type="radio" id="elec" name="elec_pmp" value="No" onChange={(e) => setFarmer({ ...farmer, elec_pmp: e.target.value })} />
                                         <label for="no">No</label>
                                     </div>
                                 </div> :
                                 <div className="form-control">
-                                    <div>
+                                    <div className="radio">
                                         <input type="radio" id="elec" name="elec_pmp" value="Yes" onChange={(e) => setFarmer({ ...farmer, elec_pmp: e.target.value })} />
                                         <label for="yes">Yes</label>
                                     </div>
-                                    <div>
+                                    <div className="radio">
                                         <input type="radio" id="elec" name="elec_pmp" value="No" checked onChange={(e) => setFarmer({ ...farmer, elec_pmp: e.target.value })} />
                                         <label for="no">No</label>
                                     </div>
@@ -942,21 +942,21 @@ const EditCoupon = () => {
                             <label for="exampleInputPassword1">Kisan Credit Card:</label>
                             {(farmer.kcc === 'Yes') ?
                                 <div className="form-control">
-                                    <div>
+                                    <div className="radio">
                                         <input type="radio" id="kcc" name="kcc" value="Yes" checked onChange={(e) => setFarmer({ ...farmer, kcc: e.target.value })} />
                                         <label for="yes">Yes</label>
                                     </div>
-                                    <div>
+                                    <div className="radio">
                                         <input type="radio" id="kcc" name="kcc" value="No" onChange={(e) => setFarmer({ ...farmer, kcc: e.target.value })} />
                                         <label for="no">No</label>
                                     </div>
                                 </div> :
                                 <div className="form-control">
-                                    <div>
+                                    <div className="radio">
                                         <input type="radio" id="kcc" name="kcc" value="Yes" onChange={(e) => setFarmer({ ...farmer, kcc: e.target.value })} />
                                         <label for="yes">Yes</label>
                                     </div>
-                                    <div>
+                                    <div className="radio">
                                         <input type="radio" id="kcc" name="kcc" value="No" checked onChange={(e) => setFarmer({ ...farmer, kcc: e.target.value })} />
                                         <label for="no">No</label>
                                     </div>
@@ -969,21 +969,21 @@ const EditCoupon = () => {
                             <label for="exampleInputPassword1">Beneficiery of PM Kisan:</label>
                             {(farmer.benef_pm_kisan === 'Yes') ?
                                 <div className="form-control radio-box2">
-                                    <div>
+                                    <div className="radio">
                                         <input type="radio" id="benef" name="benef_pm_kisan" value="Yes" checked onChange={(e) => setFarmer({ ...farmer, benef_pm_kisan: e.target.value })} />
                                         <label for="yes">Yes</label>
                                     </div>
-                                    <div>
+                                    <div className="radio">
                                         <input type="radio" id="benef" name="benef_pm_kisan" value="No" onChange={(e) => setFarmer({ ...farmer, benef_pm_kisan: e.target.value })} />
                                         <label for="no">No</label>
                                     </div>
                                 </div> :
                                 <div className="form-control">
-                                    <div>
+                                    <div className="radio">
                                         <input type="radio" id="benef" name="benef_pm_kisan" value="Yes" onChange={(e) => setFarmer({ ...farmer, benef_pm_kisan: e.target.value })} />
                                         <label for="yes">Yes</label>
                                     </div>
-                                    <div>
+                                    <div className="radio">
                                         <input type="radio" id="benef" name="benef_pm_kisan" value="No" checked onChange={(e) => setFarmer({ ...farmer, benef_pm_kisan: e.target.value })} />
                                         <label for="no">No</label>
                                     </div>

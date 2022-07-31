@@ -35,20 +35,7 @@ a {
 
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  .container {
-    width: 100%
-  }
-  .home {
-    width: 95%
-  }
-  .create {
-    width: 100%
-  }
-}
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 420px) {
   .container {
     width: 100%
   }
@@ -64,10 +51,14 @@ a {
   .radio-box2{
     width: 70%
   }
+  .radio{
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 400px ) {
+@media only screen and (min-width: 420px ) {
   .container {
     width: 100%
   }
@@ -76,6 +67,10 @@ a {
   }
   .create {
     width: 100%
+  }
+  .radio{
+    display: flex;
+    flex-direction: row;
   }
 }
 
