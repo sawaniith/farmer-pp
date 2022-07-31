@@ -788,7 +788,7 @@ const CreateCoupon = () => {
 
                         <div class="form-group">
                             <label for="exampleInputPassword1">Diesel Pumpset:</label>
-                            <div className="form-control">
+                            <div className="form-control radio-box2">
                                 <div className="radio">
                                     <input type="radio" id="dis" name="dis_pmp" value="Yes" onChange={(e) => setFarmer({ ...farmer, dis_pmp: e.target.value })} />
                                     <label for="yes">Yes</label>
@@ -821,7 +821,7 @@ const CreateCoupon = () => {
 
                         <div class="form-group">
                             <label for="exampleInputPassword1">Electric Pumpset:</label>
-                            <div className="form-control">
+                            <div className="form-control radio-box2">
                                 <div className="radio">
                                     <input type="radio" id="elec" name="elec_pmp" value="Yes" onChange={(e) => setFarmer({ ...farmer, elec_pmp: e.target.value })} />
                                     <label for="yes">Yes</label>
