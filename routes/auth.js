@@ -186,28 +186,50 @@ router.post('/getfarmers', authenticate, (req, res) => {
   const partner = req.rootPartner.name;
   const panchayat = req.body.panchayat;
 
-  Farmer.find({ partner: partner, panchayat: panchayat }, function (err, farmers) {
-    if (err) {
-      console.log(error);
-    }
-    else {
-      res.send(farmers);
-    }
-  })
+  if (partner === "Renupawanpari23") {
+    Farmer.find({ panchayat: panchayat }, function (err, farmers) {
+      if (err) {
+        console.log(error);
+      }
+      else {
+        res.send(farmers);
+      }
+    })
+  } else {
+    Farmer.find({ partner: partner, panchayat: panchayat }, function (err, farmers) {
+      if (err) {
+        console.log(error);
+      }
+      else {
+        res.send(farmers);
+      }
+    })
+  }
 })
 
 router.get('/getfarmer', authenticate, (req, res) => {
 
   const partner = req.rootPartner.name;
 
-  Farmer.find({ partner: partner }, function (err, farmers) {
-    if (err) {
-      console.log(error);
-    }
-    else {
-      res.send(farmers);
-    }
-  })
+  if (partner === "Renupawanpari23") {
+    Farmer.find(function (err, farmers) {
+      if (err) {
+        console.log(error);
+      }
+      else {
+        res.send(farmers);
+      }
+    })
+  } else {
+    Farmer.find({ partner: partner }, function (err, farmers) {
+      if (err) {
+        console.log(error);
+      }
+      else {
+        res.send(farmers);
+      }
+    })
+  }
 })
 
 
