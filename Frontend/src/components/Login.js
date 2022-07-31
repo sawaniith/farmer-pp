@@ -81,7 +81,7 @@ function Login() {
   return (
     <div>
       <h1 className="text-center mt-4">Agriculture Co-ordinator Dashboard</h1>
-      <h3 className="text-center mb-4">Log in to Continue</h3>
+      <h3 className="text-center mb-4">Log in to error Continue</h3>
       <br />
       <div className="container">
         <form method="POST" className="card">
