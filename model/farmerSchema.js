@@ -40,8 +40,7 @@ const farmerSchema = new mongoose.Schema({
     },
     wife_husband_aadhar: {
         type: String,
-        required: true,
-        unique: true
+        required: true
     },
     reven_vill: {
         type: String,
