@@ -93,6 +93,7 @@ function Login() {
                 type="text"
                 class="form-control"
                 value={name}
+                autocomplete="off"
                 onChange={(e) => setName(e.target.value)}
                 //   id="exampleInputEmail1"
                 aria-describedby="emailHelp"
@@ -107,6 +108,7 @@ function Login() {
                 type="password"
                 class="form-control"
                 value={password}
+                autocomplete="off"
                 onChange={(e) => setPassword(e.target.value)}
                 //   id="exampleInputPassword1"
                 placeholder="Password"

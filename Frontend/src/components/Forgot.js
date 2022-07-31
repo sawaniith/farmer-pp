@@ -99,13 +99,14 @@ const Forgot = () => {
                                 type="text"
                                 class="form-control"
                                 value={name}
+                                autocomplete="off"
                                 onChange={(e) => setName(e.target.value)}
                                 aria-describedby="emailHelp"
                                 placeholder="Enter your ID (Name)"
                             />
                             {/* <div className="text-danger">{credErr.name}</div> */}
-
                         </div>
+
                         <div class="form-group">
                             <label>Enter Email:</label>
                             <input
@@ -113,6 +114,7 @@ const Forgot = () => {
                                 type="email"
                                 class="form-control"
                                 value={email}
+                                autocomplete="off"
                                 onChange={(e) => setEmail(e.target.value)}
                                 placeholder="Enter Registered Email"
                             />
@@ -126,6 +128,7 @@ const Forgot = () => {
                                 type="text"
                                 class="form-control"
                                 value={phone}
+                                autocomplete="off"
                                 onChange={(e) => setPhone(e.target.value)}
                                 placeholder="Enter Registered Phone"
                             />

@@ -89,6 +89,7 @@ const Reset = () => {
                                 type="password"
                                 class="form-control"
                                 value={password}
+                                autocomplete="off"
                                 onChange={(e) => setPassword(e.target.value)}
                                 placeholder="Enter New Password"
                             />
@@ -100,6 +101,7 @@ const Reset = () => {
                                 type="password"
                                 class="form-control"
                                 value={cnfpassword}
+                                autocomplete="off"
                                 onChange={(e) => setCnfPassword(e.target.value)}
                                 placeholder="Confirm New Password"
                             />

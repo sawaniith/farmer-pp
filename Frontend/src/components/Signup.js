@@ -147,6 +147,7 @@ function Signup() {
                 name="name"
                 class="form-control"
                 value={partner.name}
+                autocomplete="off"
                 onChange={handleInputs}
                 placeholder="Your Name"
               />
@@ -160,6 +161,7 @@ function Signup() {
                 name="phone"
                 class="form-control"
                 value={partner.phone}
+                autocomplete="off"
                 onChange={handleInputs}
                 placeholder="phone"
               />
@@ -174,6 +176,7 @@ function Signup() {
                 class="form-control"
                 aria-describedby="emailHelp"
                 value={partner.email}
+                autocomplete="off"
                 onChange={handleInputs}
                 placeholder="Enter email"
               />
@@ -193,6 +196,7 @@ function Signup() {
                 class="form-control"
                 name="password"
                 value={partner.password}
+                autocomplete="off"
                 onChange={handleInputs}
                 placeholder="Password"
               />
@@ -206,6 +210,7 @@ function Signup() {
                 name="cpassword"
                 class="form-control"
                 value={partner.cpassword}
+                autocomplete="off"
                 onChange={handleInputs}
                 placeholder="Password"
               />
