@@ -186,10 +186,10 @@ const Home = () => {
           <option name="panchayt" value="BABHANGAMA">BABHANGAMA</option>
           <option name="panchayt" value="LATTIPUR NORTH">LATTIPUR NORTH</option>
           <option name="panchayt" value="LATTIPUR SOUTH">LATTIPUR SOUTH</option>
-          <option name="panchayat" value="BIHPUR EAST">BIHPUR EAST</option>
-          <option name="panchayat" value="BIHPUR JAMALPUR">BIHPUR JAMALPUR</option>
-          <option name="panchayat" value="BIHPUR SOUTH">BIHPUR SOUTH</option>
-          <option name="panchayat" value="BIHPUR MIDDLE">BIHPUR MIDDLE</option>
+          <option name="panchayt" value="BIHPUR EAST">BIHPUR EAST</option>
+          <option name="panchayt" value="BIHPUR JAMALPUR">BIHPUR JAMALPUR</option>
+          <option name="panchayt" value="BIHPUR SOUTH">BIHPUR SOUTH</option>
+          <option name="panchayt" value="BIHPUR MIDDLE">BIHPUR MIDDLE</option>
         </select>
       </div>
 
