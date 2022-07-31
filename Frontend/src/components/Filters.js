@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { PartnerContext } from '../App';
 import '../styles/globals.css'
 // import ReactHTMLTableToExcel from 'react-html-table-to-excel';
-import XLSX from 'xlsx';
+import * as XLSX from 'xlsx';
 
 
 const Filters = () => {
