@@ -45,11 +45,8 @@ a {
   .create {
     width: 100%
   }
-  .radio-box1{
+  .radio-box{
     width: 60%
-  }
-  .radio-box2{
-    width: 70%
   }
   .radio{
     display: flex;

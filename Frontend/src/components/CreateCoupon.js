@@ -679,7 +679,7 @@ const CreateCoupon = () => {
 
                         <div class="form-group ">
                             <label for="exampleInputPassword1">Own Agriculture Land:</label>
-                            <div className="form-control radio-box1">
+                            <div className="form-control radio-box">
                                 <div className="radio">
                                     <input type="radio" id="ownagr" name="own_agri_land" value="Yes" onChange={(e) => setFarmer({ ...farmer, own_agri_land: e.target.value })} />
                                     <label for="yes">Yes</label>
@@ -788,7 +788,7 @@ const CreateCoupon = () => {
 
                         <div class="form-group">
                             <label for="exampleInputPassword1">Diesel Pumpset:</label>
-                            <div className="form-control radio-box2">
+                            <div className="form-control radio-box">
                                 <div className="radio">
                                     <input type="radio" id="dis" name="dis_pmp" value="Yes" onChange={(e) => setFarmer({ ...farmer, dis_pmp: e.target.value })} />
                                     <label for="yes">Yes</label>
@@ -821,7 +821,7 @@ const CreateCoupon = () => {
 
                         <div class="form-group">
                             <label for="exampleInputPassword1">Electric Pumpset:</label>
-                            <div className="form-control radio-box2">
+                            <div className="form-control radio-box">
                                 <div className="radio">
                                     <input type="radio" id="elec" name="elec_pmp" value="Yes" onChange={(e) => setFarmer({ ...farmer, elec_pmp: e.target.value })} />
                                     <label for="yes">Yes</label>
@@ -854,7 +854,7 @@ const CreateCoupon = () => {
 
                         <div class="form-group">
                             <label for="exampleInputPassword1">Kisan Credit Card:</label>
-                            <div className="form-control">
+                            <div className="form-control radio-box">
                                 <div className="radio">
                                     <input type="radio" id="kcc" name="kcc" value="Yes" onChange={(e) => setFarmer({ ...farmer, kcc: e.target.value })} />
                                     <label for="yes">Yes</label>
@@ -869,7 +869,7 @@ const CreateCoupon = () => {
 
                         <div class="form-group">
                             <label for="exampleInputPassword1">Beneficiery of PM Kisan:</label>
-                            <div className="form-control radio-box2">
+                            <div className="form-control radio-box">
                                 <div className="radio">
                                     <input type="radio" id="benef" name="benef_pm_kisan" value="Yes" onChange={(e) => setFarmer({ ...farmer, benef_pm_kisan: e.target.value })} />
                                     <label for="yes">Yes</label>
