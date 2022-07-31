@@ -220,6 +220,7 @@ const Home = () => {
             <th>Kisan Credit Card</th>
             <th>Beneficiery of PM Kisan</th>
             <th>Payment Installment</th>
+            <th>Agriculture Co-ordinator</th>
             <th></th>
             <th></th>
           </tr>
@@ -251,6 +252,7 @@ const Home = () => {
               <td>{farmer.kcc}</td>
               <td>{farmer.benef_pm_kisan}</td>
               <td>{farmer.payment_install}</td>
+              <td>{farmer.partner}</td>
 
               <td><button type="button" class="btn btn-primary" onClick={() => edit(
                 farmer._id,

@@ -184,6 +184,7 @@ const Filters = () => {
                         <th>Kisan Credit Card</th>
                         <th>Beneficiery of PM Kisan</th>
                         <th>Payment Installment</th>
+                        <th>Agriculture Co-ordinator</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -213,6 +214,7 @@ const Filters = () => {
                             <td>{farmer.kcc}</td>
                             <td>{farmer.benef_pm_kisan}</td>
                             <td>{farmer.payment_install}</td>
+                            <td>{farmer.partner}</td>
                         </tr>
                     )}
                 </tbody>
