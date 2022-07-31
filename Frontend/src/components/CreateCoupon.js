@@ -679,7 +679,7 @@ const CreateCoupon = () => {
 
                         <div class="form-group ">
                             <label for="exampleInputPassword1">Own Agriculture Land:</label>
-                            <div className="form-control">
+                            <div className="form-control radio-box1">
                                 <div>
                                     <input type="radio" id="ownagr" name="own_agri_land" value="Yes" onChange={(e) => setFarmer({ ...farmer, own_agri_land: e.target.value })} />
                                     <label for="yes">Yes</label>
@@ -869,7 +869,7 @@ const CreateCoupon = () => {
 
                         <div class="form-group">
                             <label for="exampleInputPassword1">Beneficiery of PM Kisan:</label>
-                            <div className="form-control">
+                            <div className="form-control radio-box2">
                                 <div>
                                     <input type="radio" id="benef" name="benef_pm_kisan" value="Yes" onChange={(e) => setFarmer({ ...farmer, benef_pm_kisan: e.target.value })} />
                                     <label for="yes">Yes</label>

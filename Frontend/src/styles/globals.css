@@ -47,36 +47,55 @@ a {
   }
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px ) {
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 400px) {
   .container {
-    width: 80%
+    width: 100%
   }
   .home {
     width: 95%
   }
   .create {
-    width: 90%
+    width: 100%
   }
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-  .container {
+  .radio-box1{
     width: 60%
   }
-  .home {
-    width: 95%
-  }
-  .create {
+  .radio-box2{
     width: 70%
   }
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 400px ) {
   .container {
-    width: 50%
+    width: 100%
+  }
+  .home {
+    width: 95%
+  }
+  .create {
+    width: 100%
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 568px) {
+  .container {
+    width: 70%
+  }
+  .home {
+    width: 95%
+  }
+  .create {
+    width: 80%
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 792px) {
+  .container {
+    width: 60%
   }
   .home {
     width: 95%
@@ -87,9 +106,9 @@ a {
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1000px) {
   .container {
-    width: 40%
+    width: 50%
   }
   .home {
     width: 95%

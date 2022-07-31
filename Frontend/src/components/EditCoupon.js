@@ -719,7 +719,7 @@ const EditCoupon = () => {
                             <label for="exampleInputPassword1">Own Agriculture Land:</label>
 
                             {(farmer.own_agri_land === 'Yes') ?
-                                <div className="form-control">
+                                <div className="form-control radio-box1">
                                     <div>
                                         <input type="radio" id="ownagr" name="own_agri_land" value="Yes" checked onChange={(e) => setFarmer({ ...farmer, own_agri_land: e.target.value })} />
                                         <label for="yes">Yes</label>
@@ -968,7 +968,7 @@ const EditCoupon = () => {
                         <div class="form-group">
                             <label for="exampleInputPassword1">Beneficiery of PM Kisan:</label>
                             {(farmer.benef_pm_kisan === 'Yes') ?
-                                <div className="form-control">
+                                <div className="form-control radio-box2">
                                     <div>
                                         <input type="radio" id="benef" name="benef_pm_kisan" value="Yes" checked onChange={(e) => setFarmer({ ...farmer, benef_pm_kisan: e.target.value })} />
                                         <label for="yes">Yes</label>
