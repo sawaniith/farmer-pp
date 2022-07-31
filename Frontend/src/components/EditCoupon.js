@@ -41,10 +41,10 @@ const EditCoupon = () => {
 
     let len = crops.length;
 
-    if(crops[len-1]==="Paddy" || crops[len-1]==="Wheat" || crops[len-1]==="Maize" || crops[len-1]==="Moong"|| crops[len-1]==="Urad"){
+    if (crops[len - 1] === "Paddy" || crops[len - 1] === "Wheat" || crops[len - 1] === "Maize" || crops[len - 1] === "Moong" || crops[len - 1] === "Urad") {
         crops.push("");
     }
-    
+
     len = crops.length;
 
     const [others, setOthers] = useState(crops[len - 1]);
@@ -211,7 +211,7 @@ const EditCoupon = () => {
         else errors.rakwa = ""
         if (!values.agri_implem || values.agri_implem === "") errors.agri_implem = "Cannot be blank"
         else errors.agri_implem = ""
-        if (checked.length===0) errors.crops = "Cannot be blank"
+        if (checked.length === 0) errors.crops = "Cannot be blank"
         else errors.crops = ""
         if (!values.dis_pmp || values.dis_pmp === "") errors.dis_pmp = "Cannot be blank"
         else errors.dis_pmp = ""
@@ -496,7 +496,7 @@ const EditCoupon = () => {
                 // block: "",
                 // dist: "",
                 farmer_name: "",
-                farmer_register:"",
+                farmer_register: "",
                 father_husband_name: "",
                 mobile: "",
                 aadhar: "",
@@ -506,7 +506,7 @@ const EditCoupon = () => {
                 khata: "",
                 khesra: "",
                 rakwa: "",
-                agri_implem:"",
+                agri_implem: "",
                 crops: "",
                 dis_pmp: "",
                 no_dis_pmp: "",
@@ -563,19 +563,71 @@ const EditCoupon = () => {
                                     <option name="panchayat" value={farmer.panchayat}>{farmer.panchayat}</option>
                                     <option name="panchayat" value="LATTIPUR NORTH">LATTIPUR NORTH</option>
                                     <option name="panchayat" value="LATTIPUR SOUTH">LATTIPUR SOUTH</option>
+                                    <option name="panchayat" value="BIHPUR EAST">BIHPUR EAST</option>
+                                    <option name="panchayat" value="BIHPUR JAMALPUR">BIHPUR JAMALPUR</option>
+                                    <option name="panchayat" value="BIHPUR SOUTH">BIHPUR SOUTH</option>
+                                    <option name="panchayat" value="BIHPUR MIDDLE">BIHPUR MIDDLE</option>
                                 </select> :
                                 (farmer.panchayat) === 'LATTIPUR NORTH' ?
                                     <select class="form-select" name="panchayat" id="panch" aria-label="Default select example" value={farmer.panchayat} onChange={(e) => setFarmer({ ...farmer, panchayat: e.target.value })}>
                                         <option name="panchayat" value={farmer.panchayat}>{farmer.panchayat}</option>
                                         <option name="panchayat" value="BABHANGAMA">BABHANGAMA</option>
                                         <option name="panchayat" value="LATTIPUR SOUTH">LATTIPUR SOUTH</option>
+                                        <option name="panchayat" value="BIHPUR EAST">BIHPUR EAST</option>
+                                        <option name="panchayat" value="BIHPUR JAMALPUR">BIHPUR JAMALPUR</option>
+                                        <option name="panchayat" value="BIHPUR SOUTH">BIHPUR SOUTH</option>
+                                        <option name="panchayat" value="BIHPUR MIDDLE">BIHPUR MIDDLE</option>
                                     </select> :
                                     (farmer.panchayat) === 'LATTIPUR SOUTH' ?
                                         <select class="form-select" name="panchayat" id="panch" aria-label="Default select example" value={farmer.panchayat} onChange={(e) => setFarmer({ ...farmer, panchayat: e.target.value })}>
                                             <option name="panchayat" value={farmer.panchayat}>{farmer.panchayat}</option>
                                             <option name="panchayat" value="BABHANGAMA">BABHANGAMA</option>
                                             <option name="panchayat" value="LATTIPUR NORTH">LATTIPUR NORTH</option>
-                                        </select> : <option></option>}
+                                            <option name="panchayat" value="BIHPUR EAST">BIHPUR EAST</option>
+                                            <option name="panchayat" value="BIHPUR JAMALPUR">BIHPUR JAMALPUR</option>
+                                            <option name="panchayat" value="BIHPUR SOUTH">BIHPUR SOUTH</option>
+                                            <option name="panchayat" value="BIHPUR MIDDLE">BIHPUR MIDDLE</option>
+                                        </select> :
+                                        (farmer.panchayat) === 'BIHPUR EAST' ?
+                                            <select class="form-select" name="panchayat" id="panch" aria-label="Default select example" value={farmer.panchayat} onChange={(e) => setFarmer({ ...farmer, panchayat: e.target.value })}>
+                                                <option name="panchayat" value={farmer.panchayat}>{farmer.panchayat}</option>
+                                                <option name="panchayat" value="BABHANGAMA">BABHANGAMA</option>
+                                                <option name="panchayat" value="LATTIPUR NORTH">LATTIPUR NORTH</option>
+                                                <option name="panchayat" value="LATTIPUR SOUTH">LATTIPUR SOUTH</option>
+                                                <option name="panchayat" value="BIHPUR JAMALPUR">BIHPUR JAMALPUR</option>
+                                                <option name="panchayat" value="BIHPUR SOUTH">BIHPUR SOUTH</option>
+                                                <option name="panchayat" value="BIHPUR MIDDLE">BIHPUR MIDDLE</option>
+                                            </select> :
+                                            (farmer.panchayat) === 'BIHPUR JAMALPUR' ?
+                                                <select class="form-select" name="panchayat" id="panch" aria-label="Default select example" value={farmer.panchayat} onChange={(e) => setFarmer({ ...farmer, panchayat: e.target.value })}>
+                                                    <option name="panchayat" value={farmer.panchayat}>{farmer.panchayat}</option>
+                                                    <option name="panchayat" value="BABHANGAMA">BABHANGAMA</option>
+                                                    <option name="panchayat" value="LATTIPUR NORTH">LATTIPUR NORTH</option>
+                                                    <option name="panchayat" value="LATTIPUR SOUTH">LATTIPUR SOUTH</option>
+                                                    <option name="panchayat" value="BIHPUR EAST">BIHPUR EAST</option>
+                                                    <option name="panchayat" value="BIHPUR SOUTH">BIHPUR SOUTH</option>
+                                                    <option name="panchayat" value="BIHPUR MIDDLE">BIHPUR MIDDLE</option>
+                                                </select> :
+                                                (farmer.panchayat) === 'BIHPUR SOUTH' ?
+                                                    <select class="form-select" name="panchayat" id="panch" aria-label="Default select example" value={farmer.panchayat} onChange={(e) => setFarmer({ ...farmer, panchayat: e.target.value })}>
+                                                        <option name="panchayat" value={farmer.panchayat}>{farmer.panchayat}</option>
+                                                        <option name="panchayat" value="BABHANGAMA">BABHANGAMA</option>
+                                                        <option name="panchayat" value="LATTIPUR NORTH">LATTIPUR NORTH</option>
+                                                        <option name="panchayat" value="LATTIPUR SOUTH">LATTIPUR SOUTH</option>
+                                                        <option name="panchayat" value="BIHPUR EAST">BIHPUR EAST</option>
+                                                        <option name="panchayat" value="BIHPUR JAMALPUR">BIHPUR JAMALPUR</option>
+                                                        <option name="panchayat" value="BIHPUR MIDDLE">BIHPUR MIDDLE</option>
+                                                    </select> :
+                                                    (farmer.panchayat) === 'BIHPUR MIDDLE' ?
+                                                        <select class="form-select" name="panchayat" id="panch" aria-label="Default select example" value={farmer.panchayat} onChange={(e) => setFarmer({ ...farmer, panchayat: e.target.value })}>
+                                                            <option name="panchayat" value={farmer.panchayat}>{farmer.panchayat}</option>
+                                                            <option name="panchayat" value="BABHANGAMA">BABHANGAMA</option>
+                                                            <option name="panchayat" value="LATTIPUR NORTH">LATTIPUR NORTH</option>
+                                                            <option name="panchayat" value="LATTIPUR SOUTH">LATTIPUR SOUTH</option>
+                                                            <option name="panchayat" value="BIHPUR EAST">BIHPUR EAST</option>
+                                                            <option name="panchayat" value="BIHPUR JAMALPUR">BIHPUR JAMALPUR</option>
+                                                            <option name="panchayat" value="BIHPUR SOUTH">BIHPUR SOUTH</option>
+                                                        </select> : <option></option>}
 
                         </div>
 

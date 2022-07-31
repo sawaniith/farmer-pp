@@ -537,6 +537,10 @@ const CreateCoupon = () => {
                                 <option name="panchayat" value="BABHANGAMA">BABHANGAMA</option>
                                 <option name="panchayat" value="LATTIPUR NORTH">LATTIPUR NORTH</option>
                                 <option name="panchayat" value="LATTIPUR SOUTH">LATTIPUR SOUTH</option>
+                                <option name="panchayat" value="BIHPUR EAST">BIHPUR EAST</option>
+                                <option name="panchayat" value="BIHPUR JAMALPUR">BIHPUR JAMALPUR</option>
+                                <option name="panchayat" value="BIHPUR SOUTH">BIHPUR SOUTH</option>
+                                <option name="panchayat" value="BIHPUR MIDDLE">BIHPUR MIDDLE</option>
                             </select>
                         </div>
 
