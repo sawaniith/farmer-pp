@@ -198,7 +198,7 @@ const Home = () => {
         </div>
         <div class="col-md-4">
           <div className="form-outline">
-            <input type="search" id="form1" class="form-control" placeholder="Search by Name" aria-label="Search" onChange={event => setQuery(event.target.value)} />
+            <input type="search" id="form1" class="form-control" placeholder="Search by Name or Mobile or Aadhar" aria-label="Search" onChange={event => setQuery(event.target.value)} />
           </div>
         </div>
       </div>
@@ -241,6 +241,10 @@ const Home = () => {
               if (query === '') {
                 return farmer;
               } else if (farmer.farmer_name.toLowerCase().includes(query.toLowerCase())) {
+                return farmer;
+              } else if (farmer.mobile.includes(query)) {
+                return farmer;
+              } else if (farmer.aadhar.includes(query)) {
                 return farmer;
               }
             }).map(farmer =>
