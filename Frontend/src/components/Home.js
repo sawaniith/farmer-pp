@@ -180,22 +180,27 @@ const Home = () => {
 
       <h5 className="p-3 text-center">Scroll right to Edit or Print</h5>
 
-      <div className="text-right">
-        <input placeholder="Search by Name" onChange={event => setQuery(event.target.value)} />
-      </div>
-
-      <div class="form-group">
-        <label for="exampleInputEmail1"><strong>Panchayat:</strong></label>
-        <select class="form-select" name="panchayt" id="panch" aria-label="Default select example" value={panchayt} onChange={(e) => setPanchayt(e.target.value)}>
-          <option name="panchayt" value="ALL PANCH">ALL PANCHAYAT</option>
-          <option name="panchayt" value="BABHANGAMA">BABHANGAMA</option>
-          <option name="panchayt" value="LATTIPUR NORTH">LATTIPUR NORTH</option>
-          <option name="panchayt" value="LATTIPUR SOUTH">LATTIPUR SOUTH</option>
-          <option name="panchayt" value="BIHPUR EAST">BIHPUR EAST</option>
-          <option name="panchayt" value="BIHPUR JAMALPUR">BIHPUR JAMALPUR</option>
-          <option name="panchayt" value="BIHPUR SOUTH">BIHPUR SOUTH</option>
-          <option name="panchayt" value="BIHPUR MIDDLE">BIHPUR MIDDLE</option>
-        </select>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="form-group">
+            {/* <label for="exampleInputEmail1"><strong>Panchayat:</strong></label> */}
+            <select class="form-select" name="panchayt" id="panch" aria-label="Default select example" value={panchayt} onChange={(e) => setPanchayt(e.target.value)}>
+              <option name="panchayt" value="ALL PANCH">ALL PANCHAYAT</option>
+              <option name="panchayt" value="BABHANGAMA">BABHANGAMA</option>
+              <option name="panchayt" value="LATTIPUR NORTH">LATTIPUR NORTH</option>
+              <option name="panchayt" value="LATTIPUR SOUTH">LATTIPUR SOUTH</option>
+              <option name="panchayt" value="BIHPUR EAST">BIHPUR EAST</option>
+              <option name="panchayt" value="BIHPUR JAMALPUR">BIHPUR JAMALPUR</option>
+              <option name="panchayt" value="BIHPUR SOUTH">BIHPUR SOUTH</option>
+              <option name="panchayt" value="BIHPUR MIDDLE">BIHPUR MIDDLE</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div className="form-outline">
+            <input type="search" id="form1" class="form-control" placeholder="Search by Name" aria-label="Search" onChange={event => setQuery(event.target.value)} />
+          </div>
+        </div>
       </div>
 
       <table className="table example table-striped table-bordered" style={{ "display": "block", "overflow-x": "auto", "white-space": "nowrap" }}>
@@ -321,14 +326,6 @@ const Home = () => {
                   farmer.benef_pm_kisan,
                   farmer.payment_install
                 )} >Print</button></td>
-                {/* {
-                .map((farmer, index) => (
-                  <div className="box" key={index}>
-                    <p>{farmer.title}</p>
-                    <p>{farmer.author}</p>
-                  </div>
-                ))
-                } */}
               </tr>
             )}
         </tbody>
