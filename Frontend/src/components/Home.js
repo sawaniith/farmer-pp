@@ -9,6 +9,7 @@ const Home = () => {
   const { state, dispatch } = useContext(PartnerContext);
   dispatch({ type: "PARTNER", payload: true });
   const [panchayt, setPanchayt] = useState("ALL PANCH");
+  const [query, setQuery] = useState("")
 
   const [farmers, setFarmers] = useState([
     {
@@ -179,6 +180,10 @@ const Home = () => {
 
       <h5 className="p-3 text-center">Scroll right to Edit or Print</h5>
 
+      <div className="text-right">
+        <input placeholder="Search by Name" onChange={event => setQuery(event.target.value)} />
+      </div>
+
       <div class="form-group">
         <label for="exampleInputEmail1"><strong>Panchayat:</strong></label>
         <select class="form-select" name="panchayt" id="panch" aria-label="Default select example" value={panchayt} onChange={(e) => setPanchayt(e.target.value)}>
@@ -226,91 +231,106 @@ const Home = () => {
           </tr>
         </thead>
         <tbody>
-          {farmers && farmers.map(farmer =>
-            <tr key={farmer._id}>
-              <td> {sr++}</td>
-              <td>{farmer.farmer_register}</td>
-              <td>{farmer.farmer_name}</td>
-              <td>{farmer.father_husband_name}</td>
-              <td>{farmer.mobile}</td>
-              <td>{farmer.aadhar}</td>
-              <td> {farmer.reven_vill}</td>
-              <td>{farmer.panchayat}</td>
-              <td>{farmer.block}</td>
-              <td>{farmer.dist}</td>
-              <td>{farmer.wife_husband_aadhar}</td>
-              <td>{farmer.own_agri_land}</td>
-              <td>{farmer.khata}</td>
-              <td>{farmer.khesra}</td>
-              <td>{farmer.rakwa}</td>
-              <td>{string(farmer.crops)}</td>
-              <td>{farmer.dis_pmp}</td>
-              <td>{farmer.no_dis_pmp}</td>
-              <td>{farmer.elec_pmp}</td>
-              <td>{farmer.no_elec_pmp}</td>
-              <td>{farmer.agri_implem}</td>
-              <td>{farmer.kcc}</td>
-              <td>{farmer.benef_pm_kisan}</td>
-              <td>{farmer.payment_install}</td>
-              <td>{farmer.partner}</td>
+          {
+            farmers.filter(farmer => {
+              if (query === '') {
+                return farmer;
+              } else if (farmer.farmer_name.toLowerCase().includes(query.toLowerCase())) {
+                return farmer;
+              }
+            }).map(farmer =>
+              <tr key={farmer._id}>
+                <td> {sr++}</td>
+                <td>{farmer.farmer_register}</td>
+                <td>{farmer.farmer_name}</td>
+                <td>{farmer.father_husband_name}</td>
+                <td>{farmer.mobile}</td>
+                <td>{farmer.aadhar}</td>
+                <td> {farmer.reven_vill}</td>
+                <td>{farmer.panchayat}</td>
+                <td>{farmer.block}</td>
+                <td>{farmer.dist}</td>
+                <td>{farmer.wife_husband_aadhar}</td>
+                <td>{farmer.own_agri_land}</td>
+                <td>{farmer.khata}</td>
+                <td>{farmer.khesra}</td>
+                <td>{farmer.rakwa}</td>
+                <td>{string(farmer.crops)}</td>
+                <td>{farmer.dis_pmp}</td>
+                <td>{farmer.no_dis_pmp}</td>
+                <td>{farmer.elec_pmp}</td>
+                <td>{farmer.no_elec_pmp}</td>
+                <td>{farmer.agri_implem}</td>
+                <td>{farmer.kcc}</td>
+                <td>{farmer.benef_pm_kisan}</td>
+                <td>{farmer.payment_install}</td>
+                <td>{farmer.partner}</td>
 
-              <td><button type="button" class="btn btn-primary" onClick={() => edit(
-                farmer._id,
-                farmer.partner,
-                farmer.panchayat,
-                farmer.block,
-                farmer.dist,
-                farmer.farmer_name,
-                farmer.farmer_register,
-                farmer.father_husband_name,
-                farmer.mobile,
-                farmer.aadhar,
-                farmer.wife_husband_aadhar,
-                farmer.reven_vill,
-                farmer.own_agri_land,
-                farmer.khata,
-                farmer.khesra,
-                farmer.rakwa,
-                farmer.agri_implem,
-                farmer.crops,
-                farmer.dis_pmp,
-                farmer.no_dis_pmp,
-                farmer.elec_pmp,
-                farmer.no_elec_pmp,
-                farmer.kcc,
-                farmer.benef_pm_kisan,
-                farmer.payment_install
-              )}
-              >Edit</button></td>
-              <td><button type="button" class="btn btn-info" onClick={() => fulldet(
-                farmer._id,
-                farmer.partner,
-                farmer.panchayat,
-                farmer.block,
-                farmer.dist,
-                farmer.farmer_name,
-                farmer.farmer_register,
-                farmer.father_husband_name,
-                farmer.mobile,
-                farmer.aadhar,
-                farmer.wife_husband_aadhar,
-                farmer.reven_vill,
-                farmer.own_agri_land,
-                farmer.khata,
-                farmer.khesra,
-                farmer.rakwa,
-                farmer.agri_implem,
-                farmer.crops,
-                farmer.dis_pmp,
-                farmer.no_dis_pmp,
-                farmer.elec_pmp,
-                farmer.no_elec_pmp,
-                farmer.kcc,
-                farmer.benef_pm_kisan,
-                farmer.payment_install
-              )} >Print</button></td>
-            </tr>
-          )}
+                <td><button type="button" class="btn btn-primary" onClick={() => edit(
+                  farmer._id,
+                  farmer.partner,
+                  farmer.panchayat,
+                  farmer.block,
+                  farmer.dist,
+                  farmer.farmer_name,
+                  farmer.farmer_register,
+                  farmer.father_husband_name,
+                  farmer.mobile,
+                  farmer.aadhar,
+                  farmer.wife_husband_aadhar,
+                  farmer.reven_vill,
+                  farmer.own_agri_land,
+                  farmer.khata,
+                  farmer.khesra,
+                  farmer.rakwa,
+                  farmer.agri_implem,
+                  farmer.crops,
+                  farmer.dis_pmp,
+                  farmer.no_dis_pmp,
+                  farmer.elec_pmp,
+                  farmer.no_elec_pmp,
+                  farmer.kcc,
+                  farmer.benef_pm_kisan,
+                  farmer.payment_install
+                )}
+                >Edit</button></td>
+                <td><button type="button" class="btn btn-info" onClick={() => fulldet(
+                  farmer._id,
+                  farmer.partner,
+                  farmer.panchayat,
+                  farmer.block,
+                  farmer.dist,
+                  farmer.farmer_name,
+                  farmer.farmer_register,
+                  farmer.father_husband_name,
+                  farmer.mobile,
+                  farmer.aadhar,
+                  farmer.wife_husband_aadhar,
+                  farmer.reven_vill,
+                  farmer.own_agri_land,
+                  farmer.khata,
+                  farmer.khesra,
+                  farmer.rakwa,
+                  farmer.agri_implem,
+                  farmer.crops,
+                  farmer.dis_pmp,
+                  farmer.no_dis_pmp,
+                  farmer.elec_pmp,
+                  farmer.no_elec_pmp,
+                  farmer.kcc,
+                  farmer.benef_pm_kisan,
+                  farmer.payment_install
+                )} >Print</button></td>
+                {/* {
+                .map((farmer, index) => (
+                  <div className="box" key={index}>
+                    <p>{farmer.title}</p>
+                    <p>{farmer.author}</p>
+                  </div>
+                ))
+                } */}
+              </tr>
+            )}
         </tbody>
       </table>
       <style jsx>{`
