@@ -72,36 +72,7 @@ const Filters = () => {
         }
     }
 
-
-    const getFarmers = async () => {
-
-        try {
-            const res = await fetch('/getfarmers', {
-                method: "POST",
-                body: JSON.stringify({ panchayat: panchayt }),
-                headers: {
-                    // Accept:"application/json",
-                    "Content-Type": "application/json"
-                },
-                // credentials:"include"
-            });
-
-            const data = await res.json();
-
-            setFarmers(data);
-
-            if (res.status !== 200) {
-                const error = new Error(res.error);
-                throw error;
-            }
-        } catch (err) {
-            console.log(err);
-            navigate("/");
-        }
-    }
-
-
-    { (panchayt === 'ALL PANCH') ? getFarmer() : getFarmers() }
+    getFarmer()
 
     const string = (arr) => {
         let str = arr.toString();
@@ -110,53 +81,24 @@ const Filters = () => {
 
     let sr = 1;
 
-    const expor =()=>{
+    const expor = () => {
         // let ws = XLSX.utils.book_new();
         let el = document.getElementById("table-to-xlsx");
-        let wb = XLSX.utils.table_to_book(el,{sheet: "sheet1"});
+        let wb = XLSX.utils.table_to_book(el, { sheet: "sheet1" });
         // XLSX.utils.book_append_sheet(wb,ws,"MySheeet1");
         XLSX.writeFile(wb, "MyExcel.xlsx");
     }
 
-    return (
 
-        <div className="container home">
+    const filteredfarmer = farmers.filter((farmr) => {
+        if (panchayt === "ALL PANCH") {
+            return farmers;
+        }
+        return farmr.panchayat.toLowerCase().includes(panchayt.toLocaleLowerCase())
+    });
 
-            <h3 className="p-3 text-center">Filter and Export</h3>
-
-            <div className="text-right">
-
-                {/* <ReactHTMLTableToExcel
-                    id="test-table-xls-button"
-                    className="download-table-xls-button btn btn-success m-3"
-                    table="table-to-xls"
-                    filename="farmerxls"
-                    sheet="tablexls"
-                    buttonText="Export to Excel" /> */}
-
-                <button
-                    type="submit"
-                    onClick={expor}
-                    class="btn btn-success  m-3">
-                    Export to Excel
-                </button>
-
-            </div>
-
-            <div class="form-group">
-                <label for="exampleInputEmail1"><strong>Panchayat:</strong></label>
-                <select class="form-select" name="panchayt" id="panch" aria-label="Default select example" value={panchayt} onChange={(e) => setPanchayt(e.target.value)}>
-                    <option name="panchayt" value="ALL PANCH">ALL PANCHAYAT</option>
-                    <option name="panchayt" value="BABHANGAMA">BABHANGAMA</option>
-                    <option name="panchayt" value="LATTIPUR NORTH">LATTIPUR NORTH</option>
-                    <option name="panchayt" value="LATTIPUR SOUTH">LATTIPUR SOUTH</option>
-                    <option name="panchayt" value="BIHPUR EAST">BIHPUR EAST</option>
-                    <option name="panchayt" value="BIHPUR JAMALPUR">BIHPUR JAMALPUR</option>
-                    <option name="panchayt" value="BIHPUR SOUTH">BIHPUR SOUTH</option>
-                    <option name="panchayt" value="BIHPUR MIDDLE">BIHPUR MIDDLE</option>
-                </select>
-            </div>
-
+    const FarmerList = ({ filtered_farmer }) => {
+        return (
             <table id="table-to-xlsx" className=" example table table-striped table-bordered" style={{ "display": "block", "overflow-x": "auto", "white-space": "nowrap" }}>
                 <thead>
                     <tr>
@@ -188,7 +130,7 @@ const Filters = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {farmers && farmers.map(farmer =>
+                    {filtered_farmer.map(farmer =>
                         <tr key={farmer._id}>
                             <td> {sr++}</td>
                             <td>{farmer.farmer_register}</td>
@@ -219,6 +161,41 @@ const Filters = () => {
                     )}
                 </tbody>
             </table>
+        )
+    }
+
+
+    return (
+
+        <div className="container home">
+
+            <h3 className="p-3 text-center">Filter and Export</h3>
+
+            <div className="text-right">
+                <button
+                    type="submit"
+                    onClick={expor}
+                    class="btn btn-success  m-3">
+                    Export to Excel
+                </button>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1"><strong>Panchayat:</strong></label>
+                <select class="form-select" name="panchayt" id="panch" aria-label="Default select example" value={panchayt} onChange={(e) => setPanchayt(e.target.value)}>
+                    <option name="panchayt" value="ALL PANCH">ALL PANCHAYAT</option>
+                    <option name="panchayt" value="BABHANGAMA">BABHANGAMA</option>
+                    <option name="panchayt" value="LATTIPUR NORTH">LATTIPUR NORTH</option>
+                    <option name="panchayt" value="LATTIPUR SOUTH">LATTIPUR SOUTH</option>
+                    <option name="panchayt" value="BIHPUR EAST">BIHPUR EAST</option>
+                    <option name="panchayt" value="BIHPUR JAMALPUR">BIHPUR JAMALPUR</option>
+                    <option name="panchayt" value="BIHPUR SOUTH">BIHPUR SOUTH</option>
+                    <option name="panchayt" value="BIHPUR MIDDLE">BIHPUR MIDDLE</option>
+                </select>
+            </div>
+
+            <FarmerList filtered_farmer={filteredfarmer} />
+
             <style jsx>{`
         body {
           background-color: lightblue

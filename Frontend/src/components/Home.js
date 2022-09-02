@@ -70,34 +70,7 @@ const Home = () => {
     }
   }
 
-  const getFarmers = async () => {
-
-    try {
-      const res = await fetch('/getfarmers', {
-        method: "POST",
-        body: JSON.stringify({ panchayat: panchayt }),
-        headers: {
-          // Accept:"application/json",
-          "Content-Type": "application/json"
-        },
-        // credentials:"include"
-      });
-
-      const data = await res.json();
-
-      setFarmers(data);
-
-      if (res.status !== 200) {
-        const error = new Error(res.error);
-        throw error;
-      }
-    } catch (err) {
-      console.log(err);
-      navigate("/");
-    }
-  }
-
-  { (panchayt === 'ALL PANCH') ? getFarmer() : getFarmers() }
+  getFarmer()
 
   const edit = (a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y) => {
     navigate('/edit', {
@@ -172,37 +145,15 @@ const Home = () => {
 
   let sr = 1;
 
-  return (
+  const filteredfarmer = farmers.filter((farmr) => {
+    if (panchayt === "ALL PANCH") {
+      return farmers;
+    }
+    return farmr.panchayat.toLowerCase().includes(panchayt.toLocaleLowerCase())
+  });
 
-    <div className="container home">
-
-      <h3 className="p-3 text-center">Your Farmers</h3>
-
-      <h5 className="p-3 text-center">Scroll right to Edit or Print</h5>
-
-      <div class="row">
-        <div class="col-md-8">
-          <div class="form-group">
-            {/* <label for="exampleInputEmail1"><strong>Panchayat:</strong></label> */}
-            <select class="form-select" name="panchayt" id="panch" aria-label="Default select example" value={panchayt} onChange={(e) => setPanchayt(e.target.value)}>
-              <option name="panchayt" value="ALL PANCH">ALL PANCHAYAT</option>
-              <option name="panchayt" value="BABHANGAMA">BABHANGAMA</option>
-              <option name="panchayt" value="LATTIPUR NORTH">LATTIPUR NORTH</option>
-              <option name="panchayt" value="LATTIPUR SOUTH">LATTIPUR SOUTH</option>
-              <option name="panchayt" value="BIHPUR EAST">BIHPUR EAST</option>
-              <option name="panchayt" value="BIHPUR JAMALPUR">BIHPUR JAMALPUR</option>
-              <option name="panchayt" value="BIHPUR SOUTH">BIHPUR SOUTH</option>
-              <option name="panchayt" value="BIHPUR MIDDLE">BIHPUR MIDDLE</option>
-            </select>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div className="form-outline">
-            <input type="search" id="form1" class="form-control" placeholder="Search by Name or Mobile or Aadhar" aria-label="Search" onChange={event => setQuery(event.target.value)} />
-          </div>
-        </div>
-      </div>
-
+  const FarmerList = ({ filtered_farmer }) => {
+    return (
       <table className="table example table-striped table-bordered" style={{ "display": "block", "overflow-x": "auto", "white-space": "nowrap" }}>
         <thead>
           <tr>
@@ -237,7 +188,7 @@ const Home = () => {
         </thead>
         <tbody>
           {
-            farmers.filter(farmer => {
+            filtered_farmer.filter(farmer => {
               if (query === '') {
                 return farmer;
               } else if (farmer.farmer_name.toLowerCase().includes(query.toLowerCase())) {
@@ -334,6 +285,42 @@ const Home = () => {
             )}
         </tbody>
       </table>
+    )
+  }
+
+  return (
+
+    <div className="container home">
+
+      <h3 className="p-3 text-center">Your Farmers</h3>
+
+      <h5 className="p-3 text-center">Scroll right to Edit or Print</h5>
+
+      <div class="row">
+        <div class="col-md-8">
+          <div class="form-group">
+            {/* <label for="exampleInputEmail1"><strong>Panchayat:</strong></label> */}
+            <select class="form-select" name="panchayt" id="panch" aria-label="Default select example" value={panchayt} onChange={(e) => setPanchayt(e.target.value)}>
+              <option name="panchayt" value="ALL PANCH">ALL PANCHAYAT</option>
+              <option name="panchayt" value="BABHANGAMA">BABHANGAMA</option>
+              <option name="panchayt" value="LATTIPUR NORTH">LATTIPUR NORTH</option>
+              <option name="panchayt" value="LATTIPUR SOUTH">LATTIPUR SOUTH</option>
+              <option name="panchayt" value="BIHPUR EAST">BIHPUR EAST</option>
+              <option name="panchayt" value="BIHPUR JAMALPUR">BIHPUR JAMALPUR</option>
+              <option name="panchayt" value="BIHPUR SOUTH">BIHPUR SOUTH</option>
+              <option name="panchayt" value="BIHPUR MIDDLE">BIHPUR MIDDLE</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div className="form-outline">
+            <input type="search" id="form1" class="form-control" placeholder="Search by Name" aria-label="Search" onChange={event => setQuery(event.target.value)} />
+          </div>
+        </div>
+      </div>
+
+      <FarmerList filtered_farmer={filteredfarmer} />
+
       <style jsx>{`
         body {
           background-color: lightblue

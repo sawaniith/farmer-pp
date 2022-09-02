@@ -181,32 +181,6 @@ router.get('/getdata', authenticate, (req, res) => {
 })
 
 
-router.post('/getfarmers', authenticate, (req, res) => {
-
-  const partner = req.rootPartner.name;
-  const panchayat = req.body.panchayat;
-
-  if (partner === "Renupawanpari23") {
-    Farmer.find({ panchayat: panchayat }, function (err, farmers) {
-      if (err) {
-        console.log(error);
-      }
-      else {
-        res.send(farmers);
-      }
-    })
-  } else {
-    Farmer.find({ partner: partner, panchayat: panchayat }, function (err, farmers) {
-      if (err) {
-        console.log(error);
-      }
-      else {
-        res.send(farmers);
-      }
-    })
-  }
-})
-
 router.get('/getfarmer', authenticate, (req, res) => {
 
   const partner = req.rootPartner.name;
