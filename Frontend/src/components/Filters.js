@@ -99,7 +99,7 @@ const Filters = () => {
 
     const FarmerList = ({ filtered_farmer }) => {
         return (
-            <table id="table-to-xlsx" className=" example table table-striped table-bordered" style={{ "display": "block", "overflow-x": "auto", "white-space": "nowrap" }}>
+            <div>
                 <thead>
                     <tr>
                         <th>Sl No.</th>
@@ -160,7 +160,7 @@ const Filters = () => {
                         </tr>
                     )}
                 </tbody>
-            </table>
+            </div>
         )
     }
 
@@ -194,7 +194,9 @@ const Filters = () => {
                 </select>
             </div>
 
-            <FarmerList filtered_farmer={filteredfarmer} />
+            <table id="table-to-xlsx" className=" example table table-striped table-bordered" style={{ "display": "block", "overflow-x": "auto", "white-space": "nowrap" }}>
+                <FarmerList filtered_farmer={filteredfarmer} />
+            </table>
 
             <style jsx>{`
         body {

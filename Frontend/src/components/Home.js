@@ -154,7 +154,7 @@ const Home = () => {
 
   const FarmerList = ({ filtered_farmer }) => {
     return (
-      <table className="table example table-striped table-bordered" style={{ "display": "block", "overflow-x": "auto", "white-space": "nowrap" }}>
+      <div>
         <thead>
           <tr>
             <th>Sl No.</th>
@@ -284,7 +284,7 @@ const Home = () => {
               </tr>
             )}
         </tbody>
-      </table>
+      </div>
     )
   }
 
@@ -319,7 +319,9 @@ const Home = () => {
         </div>
       </div>
 
-      <FarmerList filtered_farmer={filteredfarmer} />
+      <table className="table example table-striped table-bordered" style={{ "display": "block", "overflow-x": "auto", "white-space": "nowrap" }}>
+        <FarmerList filtered_farmer={filteredfarmer} />
+      </table>
 
       <style jsx>{`
         body {
