@@ -314,7 +314,7 @@ const Home = () => {
         </div>
         <div class="col-md-4">
           <div className="form-outline">
-            <input type="search" id="form1" class="form-control" placeholder="Search by Name" aria-label="Search" onChange={event => setQuery(event.target.value)} />
+            <input type="search" id="form1" class="form-control" placeholder="Search by Name or Mobile or Aadhar" aria-label="Search" onChange={event => setQuery(event.target.value)} />
           </div>
         </div>
       </div>
