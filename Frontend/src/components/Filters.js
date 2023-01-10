@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { PartnerContext } from '../App';
 import '../styles/globals.css'
-// import ReactHTMLTableToExcel from 'react-html-table-to-excel';
 import * as XLSX from 'xlsx';
 
 
