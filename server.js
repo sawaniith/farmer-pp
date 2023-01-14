@@ -16,7 +16,7 @@ app.use(require('./routes/auth'));
 
 //for heroku deploy
 const PORT = process.env.PORT || 5000;
-
+socket = io.listen(process.env.PORT);
 //for heroku deploy
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("Frontend/build"));
