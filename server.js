@@ -18,15 +18,24 @@ app.use(require('./routes/auth'));
 const PORT = process.env.PORT || 5000;
 socket = io.listen(process.env.PORT);
 //for heroku deploy
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static("Frontend/build"));
+// if (process.env.NODE_ENV === "production") {
+//     app.use(express.static("Frontend/build"));
 
-    // Express serve up index.html file if it doesn't recognize route
-    const path = require('path');
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'Frontend', 'build', 'index.html'));
-    });
-}
+//     // Express serve up index.html file if it doesn't recognize route
+//     const path = require('path');
+//     app.get('*', (req, res) => {
+//         res.sendFile(path.resolve(__dirname, 'Frontend', 'build', 'index.html'));
+//     });
+// }
+
+app.use(express.static(path.join(__dirname, "./Frontend/build")));
+
+app.get('*', (_,res)=>{
+    res.sendFile(path.join(__dirname, "./Frontend/build/index.html")),
+    function(err){
+        res.status(500).send(err);
+    }
+});
 
 app.listen(PORT, () => {
     console.log(`server running......on ${PORT}`);
