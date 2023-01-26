@@ -31,11 +31,12 @@ socket = io.listen(process.env.PORT);
 
 app.use(express.static(path.join(__dirname, "./Frontend/build")));
 
-app.get('*', (_,res)=>{
-    res.sendFile(path.join(__dirname, "./Frontend/build/index.html")),
-    function(err){
-        res.status(500).send(err);
-    }
+app.get("*", (_, res) => {
+    res.sendFile(path.join(__dirname, "./Frontend/build/index.html"),
+        function (err) {
+            res.status(500).send(err);
+        }
+    );
 });
 
 app.listen(PORT, () => {
