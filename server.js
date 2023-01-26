@@ -3,6 +3,7 @@ const cookieParser = require('cookie-parser');
 const app = express();
 app.use(cookieParser());
 const dotenv = require('dotenv');
+const path = require('path');
 
 // const mongoose = require('mongoose');
 dotenv.config({ path: './config.env' });
